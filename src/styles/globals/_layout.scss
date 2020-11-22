@@ -908,6 +908,13 @@
   }
 
 }
+
+.margin-right{
+  margin: auto 0 auto auto!important;
+}
+.margin-center{
+  margin: 0 auto;
+}
 //Adding the thumb  in sliders since angular material doesn't have it by default
 //DONT DELETE IT
 //.mat-slider-thumb-label {

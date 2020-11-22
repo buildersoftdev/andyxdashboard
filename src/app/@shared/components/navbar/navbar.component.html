@@ -1,9 +1,8 @@
 <mat-toolbar color="primary" class="mat-elevation-z6">
-  <button mat-button class="example-icon">Home</button>
-  <button mat-button class="example-icon">Home</button>
-  <button mat-button class="example-icon">Data Storages</button>
-  <button mat-button class="example-icon">Tenants</button>
-  <button mat-button class="example-icon">Products</button>
-  <button mat-button class="example-icon">Settings</button>
-  <h3 >ANDY X DASHBOARD</h3>
+  <button mat-button class="example-icon" [routerLink]="'home'">Home</button>
+  <button mat-button class="example-icon" [routerLink]="'data-storage'">Data Storages</button>
+  <button mat-button class="example-icon" [routerLink]="'tenant'">Tenants</button>
+  <button mat-button class="example-icon" [routerLink]="'product'">Products</button>
+  <button mat-button class="example-icon" [routerLink]="'settings'">Settings</button>
+  <h3 class="margin-right" [routerLink]="'home'">ANDY X DASHBOARD</h3>
 </mat-toolbar>

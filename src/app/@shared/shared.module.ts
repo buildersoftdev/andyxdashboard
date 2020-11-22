@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MaterialModule} from './material/material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import {SettingsRoutingModule} from '../settings/settings-routing.module';
 
 
 
@@ -9,7 +10,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   declarations: [NavbarComponent],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    SettingsRoutingModule
   ],
   exports: [
     MaterialModule,

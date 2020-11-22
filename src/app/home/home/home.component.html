@@ -1,1 +1,60 @@
-<p>home works!</p>
+<section class="chart-container mb-3">
+  <div class="row">
+    <div class="col">
+      <div class="border border-radius-4">
+        <div>
+          <div>
+            <div style="display: block">
+              <canvas baseChart
+                      height="80vh"
+                      [datasets]="barChartData"
+                      [labels]="barChartLabels"
+                      [options]="barChartOptions"
+                      [legend]="barChartLegend"
+                      [chartType]="barChartType">
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="general-panels-container mb-3">
+  <div class="row">
+    <div class="col">
+      <div class="border border-radius-4 p-4">
+        <p class="f-16">STORAGE</p>
+        <p class="f-48 text-center py-2">700 GB/TEN</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="border border-radius-4 p-4">
+        <p class="f-16">PERFORMANCE</p>
+        <p class="f-48 text-center py-2">6 ms/Msg.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="border border-radius-4 p-4">
+        <p class="f-16">ACTIVE READERS</p>
+        <p class="f-48 text-center py-2">73</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="data-storage-container mb-3">
+  <div class="row">
+    <div class="col">
+      <div class="border border-radius-4 p-4">
+        <p class="f-16">DATA STORAGE</p>
+        <p class="f-48 text-center py-2">ACTIVE</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="border border-radius-4 p-4">
+        <p class="f-16">DATA STORAGE</p>
+        <p class="f-48 text-center py-2">ACTIVE</p>
+      </div>
+    </div>
+  </div>
+</section>

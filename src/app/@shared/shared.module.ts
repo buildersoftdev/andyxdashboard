@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {MaterialModule} from './material/material.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {SettingsRoutingModule} from '../settings/settings-routing.module';
+import {ChartsModule} from 'ng2-charts';
 
 
 
@@ -11,11 +12,13 @@ import {SettingsRoutingModule} from '../settings/settings-routing.module';
   imports: [
     CommonModule,
     MaterialModule,
-    SettingsRoutingModule
+    SettingsRoutingModule,
+    ChartsModule
   ],
   exports: [
     MaterialModule,
-    NavbarComponent
+    NavbarComponent,
+    ChartsModule
   ]
 })
 export class SharedModule { }

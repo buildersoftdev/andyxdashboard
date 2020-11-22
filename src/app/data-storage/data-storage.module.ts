@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 
 import { DataStorageRoutingModule } from './data-storage-routing.module';
 import { DataStorageComponent } from './data-storage/data-storage.component';
+import {SharedModule} from '../@shared/shared.module';
 
 
 @NgModule({
   declarations: [DataStorageComponent],
   imports: [
     CommonModule,
-    DataStorageRoutingModule
+    DataStorageRoutingModule,
+    SharedModule
   ]
 })
 export class DataStorageModule { }

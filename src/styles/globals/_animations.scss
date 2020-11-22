@@ -1,0 +1,50 @@
+@mixin transition-fast($property) {
+  transition: 0.1s $property ease-in-out;
+}
+
+@mixin transition-basic($property) {
+	transition: 0.3s $property ease-in-out;
+}
+
+@mixin transition-double($property) {
+	transition: 0.6s $property ease-in-out;
+}
+.fade-in-left-nav {
+  width: fit-content;
+   opacity: 1;
+   animation-name: fadeInOpacity;
+   animation-iteration-count: 1;
+   animation-timing-function: ease-in;
+   animation-duration: 0.4s;
+   opacity: 1;
+ }
+
+.fade-out-left-nav {
+  opacity: 0;
+  width: 0px;
+  animation-name: fadeOutOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-duration: 0.0s;
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    width: fit-content;
+    opacity: 1;
+  }
+  100% {
+    width: 0px;
+    opacity: 0;
+  }
+}
+@keyframes fadeInOpacity {
+  0% {
+    width: 0px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: fit-content;
+  }
+}

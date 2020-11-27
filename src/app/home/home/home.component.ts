@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ChartDataSets, ChartOptions, ChartType} from 'chart.js';
 import {Label} from 'ng2-charts';
+import {SocketService} from '../../@core/services/socket.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -23,9 +25,11 @@ export class HomeComponent implements OnInit {
     { data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B' }
   ];
 
-  constructor() { }
+  constructor(public socketService: SocketService, private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.socketService.getHomePageData();
   }
+
 
 }

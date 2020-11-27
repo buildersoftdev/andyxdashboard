@@ -1,60 +1,69 @@
-<section class="chart-container mb-3">
-  <div class="row">
-    <div class="col">
-      <div class="border border-radius-4">
-        <div>
+<section *ngIf='socketService && socketService._homeData else loader'>
+  <section class="chart-container mb-3">
+    <div class="row">
+      <div class="col">
+        <div class="border border-radius-4">
           <div>
-            <div style="display: block">
-              <canvas baseChart
-                      height="80vh"
-                      [datasets]="barChartData"
-                      [labels]="barChartLabels"
-                      [options]="barChartOptions"
-                      [legend]="barChartLegend"
-                      [chartType]="barChartType">
-              </canvas>
+            <div>
+              <div style="display: block">
+                <canvas baseChart
+                        height="80vh"
+                        [datasets]="barChartData"
+                        [labels]="barChartLabels"
+                        [options]="barChartOptions"
+                        [legend]="barChartLegend"
+                        [chartType]="barChartType">
+                </canvas>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+  <section class="general-panels-container mb-3">
+    <div class="row">
+      <div class="col">
+        <div class="border border-radius-4 p-4">
+          <p class="f-16">STORAGE</p>
+          <p class="f-48 text-center py-2">{{socketService._homeData['availableStorage']}} GB/TEN</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="border border-radius-4 p-4">
+          <p class="f-16">PERFORMANCE</p>
+          <p class="f-48 text-center py-2">{{socketService._homeData['avgResponseTimeInMs']}} ms/Msg.</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="border border-radius-4 p-4">
+          <p class="f-16">ACTIVE READERS</p>
+          <p class="f-48 text-center py-2">{{socketService._homeData['activeReaders']}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="data-storage-container mb-3">
+    <div class="row">
+      <div class="col">
+        <div class="border border-radius-4 p-4">
+          <p class="f-16">DATA STORAGE</p>
+          <p class="f-48 text-center py-2">ACTIVE</p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="border border-radius-4 p-4">
+          <p class="f-16">DATA STORAGE</p>
+          <p class="f-48 text-center py-2">ACTIVE</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
-<section class="general-panels-container mb-3">
-  <div class="row">
-    <div class="col">
-      <div class="border border-radius-4 p-4">
-        <p class="f-16">STORAGE</p>
-        <p class="f-48 text-center py-2">700 GB/TEN</p>
-      </div>
-    </div>
-    <div class="col">
-      <div class="border border-radius-4 p-4">
-        <p class="f-16">PERFORMANCE</p>
-        <p class="f-48 text-center py-2">6 ms/Msg.</p>
-      </div>
-    </div>
-    <div class="col">
-      <div class="border border-radius-4 p-4">
-        <p class="f-16">ACTIVE READERS</p>
-        <p class="f-48 text-center py-2">73</p>
-      </div>
-    </div>
+<ng-template #loader>
+  <div class="py-7">
+    <mat-spinner class="m-auto"></mat-spinner>
   </div>
-</section>
-<section class="data-storage-container mb-3">
-  <div class="row">
-    <div class="col">
-      <div class="border border-radius-4 p-4">
-        <p class="f-16">DATA STORAGE</p>
-        <p class="f-48 text-center py-2">ACTIVE</p>
-      </div>
-    </div>
-    <div class="col">
-      <div class="border border-radius-4 p-4">
-        <p class="f-16">DATA STORAGE</p>
-        <p class="f-48 text-center py-2">ACTIVE</p>
-      </div>
-    </div>
-  </div>
-</section>
+</ng-template>
+
+

@@ -24,6 +24,7 @@
     "@aspnet/signalr": "^1.1.4",
     "chart.js": "^2.9.4",
     "ng2-charts": "^2.4.2",
+    "prod": "^1.0.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

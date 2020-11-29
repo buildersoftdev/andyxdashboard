@@ -12,14 +12,10 @@ import {IHttpConnectionOptions} from '@aspnet/signalr';
   providedIn: 'root'
 })
 export class SocketService {
-  // tslint:disable-next-line:variable-name
-  public _homeData: any;
-  // tslint:disable-next-line:variable-name
-  public _storageData: any;
-  // tslint:disable-next-line:variable-name
-  public _productData: any;
-  // tslint:disable-next-line:variable-name
-  public _tenantData: any;
+  public summaryReportReceiver: any;
+  public storageData: any;
+  public ProductData: any;
+  public tenantData: any;
 
   private hubConnection: signalR.HubConnection;
 
@@ -34,9 +30,9 @@ export class SocketService {
       .catch(err => console.log('Error while starting connection: ' + err));
   }
 
-  public getHomePageData = () => {
+  public summaryReportReceived = () => {
     this.hubConnection.on('SummaryReportReceived', (data) => {
-      this._homeData = data;
+      this.summaryReportReceiver = data;
       console.log(data);
     });
   }

@@ -28,8 +28,20 @@ export class HomeComponent implements OnInit {
   constructor(public socketService: SocketService, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.socketService.getHomePageData();
+    this.socketService.summaryReportReceived();
   }
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+

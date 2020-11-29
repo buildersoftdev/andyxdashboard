@@ -1,4 +1,4 @@
-<section *ngIf='socketService && socketService._homeData else loader'>
+<section *ngIf='socketService && socketService.summaryReportReceiver else loader'>
   <section class="chart-container mb-3">
     <div class="row">
       <div class="col">
@@ -26,42 +26,47 @@
       <div class="col">
         <div class="border border-radius-4 p-4">
           <p class="f-16">STORAGE</p>
-          <p class="f-48 text-center py-2">{{socketService._homeData['availableStorage']}} GB/TEN</p>
+          <p class="f-48 text-center py-2">{{socketService.summaryReportReceiver['availableStorage']}} GB/TEN</p>
         </div>
       </div>
       <div class="col">
         <div class="border border-radius-4 p-4">
           <p class="f-16">PERFORMANCE</p>
-          <p class="f-48 text-center py-2">{{socketService._homeData['avgResponseTimeInMs']}} ms/Msg.</p>
+          <p class="f-48 text-center py-2">{{socketService.summaryReportReceiver['avgResponseTimeInMs']}} ms/Msg.</p>
         </div>
       </div>
       <div class="col">
         <div class="border border-radius-4 p-4">
           <p class="f-16">ACTIVE READERS</p>
-          <p class="f-48 text-center py-2">{{socketService._homeData['activeReaders']}}</p>
+          <p class="f-48 text-center py-2">{{socketService.summaryReportReceiver['activeReaders']}}</p>
         </div>
       </div>
     </div>
   </section>
   <section class="data-storage-container mb-3">
     <div class="row">
-      <div class="col">
+      <div class="col-4" *ngFor="let activeStorage of socketService.summaryReportReceiver['activeDataStorageDetails']">
         <div class="border border-radius-4 p-4">
-          <p class="f-16">DATA STORAGE</p>
-          <p class="f-48 text-center py-2">ACTIVE</p>
-        </div>
-      </div>
-      <div class="col">
-        <div class="border border-radius-4 p-4">
-          <p class="f-16">DATA STORAGE</p>
-          <p class="f-48 text-center py-2">ACTIVE</p>
+          <p class="f-16">DATA STORAGE: <span class="font-bold">{{activeStorage['dataStorageName']}}</span></p>
+          <div class="row">
+            <div class="col-auto d-flex">
+              <mat-icon aria-hidden="false" class="align-self-center icon-64 align-self-center"
+                        aria-label="Example home icon">storage
+              </mat-icon>
+            </div>
+            <div class="col">
+              <p class="f-14 mb-1"><span class="font-bold">Server:</span> {{activeStorage['dataStorageServer']}}</p>
+              <p class="f-14 mb-1"><span class="font-bold">Type:</span> {{activeStorage['dataStorageType']}}</p>
+              <p class="f-14 mb-1"><span class="font-bold">Env:</span> {{activeStorage['dataStorageEnvironment']}}</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </section>
 <ng-template #loader>
-  <div class="py-7">
+  <div class="py-7 my-7">
     <mat-spinner class="m-auto"></mat-spinner>
   </div>
 </ng-template>

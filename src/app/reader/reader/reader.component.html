@@ -1,0 +1,48 @@
+<section *ngIf='socketService && socketService.summaryReportReceiver else loader'>
+
+  <section class="data-reader-container mb-3">
+    <div class="row">
+      <div class="col-6 mb-2" *ngFor="let reader of socketService.summaryReportReceiver['activeReaderDetails']">
+        <div class="border border-radius-4 p-4">
+          <p class="f-16">READER: <span class="font-bold">{{reader['readerName']}}</span></p>
+          <div class="row">
+            <div class="col-auto d-flex">
+              <mat-icon aria-hidden="false" class="align-self-center icon-64 align-self-center"
+                        aria-label="Example home icon">library_books
+              </mat-icon>
+            </div>
+            <div class="col">
+              <div class="row">
+                <div class="col-4">
+                  <p class="f-14 mb-1"><span class="font-bold">Tenant:</span> {{reader['tenant']}}</p>
+                </div>
+                <div class="col-8">
+                  <p class="f-14 mb-1"><span class="font-bold">Product:</span> {{reader['product']}}</p>
+                </div>
+                <div class="col-4">
+                  <p class="f-14 mb-1"><span class="font-bold">Component:</span> {{reader['component']}}</p>
+                </div>
+                <div class="col-8">
+                  <p class="f-14 mb-1"><span class="font-bold">Book:</span> {{reader['book']}}</p>
+                </div>
+                <div class="col-4">
+                  <p class="f-14 mb-1"><span class="font-bold">Reader Type:</span> {{reader['readerType']}}</p>
+                </div>
+                <div class="col-8">
+                  <p class="f-14 mb-1"><span class="font-bold">Reader As:</span> {{reader['readerAs']}}</p>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+<ng-template #loader>
+  <div class="py-7 my-7">
+    <mat-spinner class="m-auto"></mat-spinner>
+  </div>
+</ng-template>

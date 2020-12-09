@@ -19,12 +19,4 @@ export class TenantService {
     return this.http.get(environment.apiUrl + '/dashboard/tenants/detail');
   }
 
-  getProducts(tenantName: string): Observable<any> {
-    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products`);
-  }
-
-  getProductDetails(tenantName: string): Observable<any> {
-    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products/detail`);
-  }
-
 }

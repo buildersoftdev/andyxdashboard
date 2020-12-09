@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import * as signalR from '@aspnet/signalr';
 import {IHttpConnectionOptions} from '@aspnet/signalr';
+import {environment} from '../../../environments/environment';
 
 // const options: IHttpConnectionOptions = {
 //   accessTokenFactory: () => {
@@ -21,7 +22,7 @@ export class SocketService {
 
   constructor() {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('https://dev-eu-andyx-buildersoft.azurewebsites.net/realtime/v1/dashboard')
+      .withUrl(environment.signalRUrl)
       .build();
 
     this.hubConnection

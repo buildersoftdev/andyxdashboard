@@ -15,8 +15,8 @@ export class TenantService {
     return this.http.get(environment.apiUrl + '/dashboard/tenants');
   }
 
-  getTenantDetails(): Observable<any> {
-    return this.http.get(environment.apiUrl + '/dashboard/tenants/detail');
+  getTenantDetails(tenantName: string): Observable<any> {
+    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}`);
   }
 
 }

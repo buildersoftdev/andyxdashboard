@@ -15,7 +15,7 @@ export class TenantComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTenants();
-    this.getTenantsDetails();
+    this.getTenantsDetails("buildersoft");
   }
 
   getTenants(): void {
@@ -25,8 +25,8 @@ export class TenantComponent implements OnInit {
     );
   }
 
-  getTenantsDetails(): void {
-    this.tenantService.getTenantDetails().subscribe(
+  getTenantsDetails(tenantName: string): void {
+    this.tenantService.getTenantDetails(tenantName).subscribe(
       tenantsDetails => this.tenantsDetails = tenantsDetails,
       error => console.log(error)
     );

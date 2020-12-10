@@ -31,6 +31,4 @@ export class TenantComponent implements OnInit {
       error => console.log(error)
     );
   }
-
-
 }

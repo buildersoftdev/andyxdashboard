@@ -14,7 +14,23 @@ export class ProductService {
     return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products`);
   }
 
-  getProductDetails(tenantName: string): Observable<any> {
+  getProductsDetails(tenantName: string): Observable<any> {
     return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products/detail`);
+  }
+
+  getComponents(tenantName: string, productName: string): Observable<any> {
+    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products/${productName}/components`);
+  }
+
+  getComponentsDetails(tenantName: string, productName: string): Observable<any> {
+    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products/${productName}/components/detail`);
+  }
+
+  getBooks(tenantName: string, productName: string, componentName: string): Observable<any> {
+    return this.http.get(environment.apiUrl+ `/dashboard/tenants/${tenantName}/products/${productName}/components/${componentName}/books`);
+  }
+
+  getBooksDetails(tenantName: string, productName: string, componentName: string): Observable<any> {
+    return this.http.get(environment.apiUrl+ `/dashboard/tenants/${tenantName}/products/${productName}/components/${componentName}/books/detail`);
   }
 }

@@ -22,7 +22,7 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
     // we are using buildersoft as example, soon this will me replaced by user choise
     this.getProducts('buildersoft');
-    this.getProductsDetails('buildersoft');
+    this.getProductsDetails('buildersoft', 'andy');
   }
 
   getProducts(tenantName: string): void {
@@ -32,8 +32,8 @@ export class ProductComponent implements OnInit {
       );
   }
 
-  getProductsDetails(tenantName: string): void {
-    this.productService.getProductsDetails(tenantName).subscribe(
+  getProductsDetails(tenantName: string, productName: string): void {
+    this.productService.getProductDetails(tenantName, productName).subscribe(
       productsDetails => this.productsDetails = productsDetails,
       error => console.log(error)
     );
@@ -46,8 +46,8 @@ export class ProductComponent implements OnInit {
     );
   }
 
-  getComponentsDetails(tenantName: string, productName: string): void {
-    this.productService.getComponentsDetails(tenantName, productName).subscribe(
+  getComponentsDetails(tenantName: string, productName: string, componentName: string): void {
+    this.productService.getComponentDetails(tenantName, productName, componentName).subscribe(
       compDetails => this.componentsDetails = compDetails,
       error => console.log(error)
     );
@@ -60,8 +60,8 @@ export class ProductComponent implements OnInit {
     );
   }
 
-  getBooksDetails(tenantName: string, productName: string, componentName: string) {
-    this.productService.getBooksDetails(tenantName, productName, componentName).subscribe(
+  getBooksDetails(tenantName: string, productName: string, componentName: string, bookName: string) {
+    this.productService.getBookDetails(tenantName, productName, componentName, bookName).subscribe(
       booksDetails => this.booksDetails = booksDetails,
       error => console.log(error)
     );

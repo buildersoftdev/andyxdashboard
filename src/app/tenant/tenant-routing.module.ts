@@ -4,6 +4,10 @@ import {TenantComponent} from './tenant/tenant.component';
 
 const routes: Routes = [
   {
+    path: '',
+    component: TenantComponent,
+  },
+  {
     path: ':tenantName',
     component: TenantComponent,
   },

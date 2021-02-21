@@ -1,4 +1,32 @@
-<p>tenants</p>
-<pre>{{tenants | json}}</pre>
-<p>tenant details</p>
-<pre>{{tenantsDetails | json}}</pre>
+<div class="row min-height-100">
+  <div class="col-xl-2 col-lg-3 border-right px-0">
+    <mat-selection-list [multiple]="false">
+      <mat-list-option
+        *ngFor="let tenantName of tenants"
+        routerLink="/tenant/{{tenantName}}"
+        routerLinkActive="docs-component-viewer-sidenav-item-selected mat-list-single-selected-option"
+        (click)="getTenantsDetails(tenantName)">
+        {{tenantName}}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <div class="col pt-3">
+    <mat-tab-group animationDuration="0ms">
+      <mat-tab label="OVERALL">
+        <p>OverAll</p>
+        <pre>{{tenants | json}}</pre>
+        <p>tenant details</p>
+        <pre>{{tenantsDetails | json}}</pre>
+      </mat-tab>
+      <mat-tab label="API">Content 2</mat-tab>
+      <mat-tab label="EXAMPLE">Content 3</mat-tab>
+    </mat-tab-group>
+  </div>
+</div>
+
+
+
+
+
+
+

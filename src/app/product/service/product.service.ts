@@ -27,10 +27,10 @@ export class ProductService {
   }
 
   getBooks(tenantName: string, productName: string, componentName: string): Observable<any> {
-    return this.http.get(environment.apiUrl+ `/dashboard/tenants/${tenantName}/products/${productName}/components/${componentName}/books`);
+    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products/${productName}/components/${componentName}/books`);
   }
 
   getBookDetails(tenantName: string, productName: string, componentName: string, bookName: string): Observable<any> {
-    return this.http.get(environment.apiUrl+ `/dashboard/tenants/${tenantName}/products/${productName}/components/${componentName}/books/${bookName}`);
+    return this.http.get(environment.apiUrl + `/dashboard/tenants/${tenantName}/products/${productName}/components/${componentName}/books/${bookName}`);
   }
 }
